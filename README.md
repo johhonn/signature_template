@@ -1,108 +1,83 @@
-# 🏗 Scaffold-ETH
+# ✍️ signator.io
 
-> everything you need to build on Ethereum! 🚀
-
-🧪 Quickly experiment with Solidity using a frontend that adapts to your smart contract:
-
-![image](https://user-images.githubusercontent.com/2653167/124158108-c14ca380-da56-11eb-967e-69cde37ca8eb.png)
-
-
-# 🏄‍♂️ Quick Start
-
-Prerequisites: [Node](https://nodejs.org/en/download/) plus [Yarn](https://classic.yarnpkg.com/en/docs/install/) and [Git](https://git-scm.com/downloads)
-
-> clone/fork 🏗 scaffold-eth:
-
-```bash
-git clone https://github.com/scaffold-eth/scaffold-eth.git
-```
-
-> install and start your 👷‍ Hardhat chain:
-
-```bash
-cd scaffold-eth
-yarn install
-yarn chain
-```
-
-> in a second terminal window, start your 📱 frontend:
-
-```bash
-cd scaffold-eth
-yarn start
-```
-
-> in a third terminal window, 🛰 deploy your contract:
-
-```bash
-cd scaffold-eth
-yarn deploy
-```
-
-🔏 Edit your smart contract `YourContract.sol` in `packages/hardhat/contracts`
-
-📝 Edit your frontend `App.jsx` in `packages/react-app/src`
-
-💼 Edit your deployment scripts in `packages/hardhat/deploy`
-
-📱 Open http://localhost:3000 to see the app
-
-# 📚 Documentation
-
-Documentation, tutorials, challenges, and many more resources, visit: [docs.scaffoldeth.io](https://docs.scaffoldeth.io)
-
-# 🔭 Learning Solidity
-
-📕 Read the docs: https://docs.soliditylang.org
-
-📚 Go through each topic from [solidity by example](https://solidity-by-example.org) editing `YourContract.sol` in **🏗 scaffold-eth**
-
-- [Primitive Data Types](https://solidity-by-example.org/primitives/)
-- [Mappings](https://solidity-by-example.org/mapping/)
-- [Structs](https://solidity-by-example.org/structs/)
-- [Modifiers](https://solidity-by-example.org/function-modifier/)
-- [Events](https://solidity-by-example.org/events/)
-- [Inheritance](https://solidity-by-example.org/inheritance/)
-- [Payable](https://solidity-by-example.org/payable/)
-- [Fallback](https://solidity-by-example.org/fallback/)
-
-📧 Learn the [Solidity globals and units](https://solidity.readthedocs.io/en/v0.6.6/units-and-global-variables.html)
-
-# 🛠 Buidl
-
-Check out all the [active branches](https://github.com/scaffold-eth/scaffold-eth/branches/active), [open issues](https://github.com/scaffold-eth/scaffold-eth/issues), and join/fund the 🏰 [BuidlGuidl](https://BuidlGuidl.com)!
-
-  
- - 🚤  [Follow the full Ethereum Speed Run](https://medium.com/@austin_48503/%EF%B8%8Fethereum-dev-speed-run-bd72bcba6a4c)
-
-
- - 🎟  [Create your first NFT](https://github.com/scaffold-eth/scaffold-eth/tree/simple-nft-example)
- - 🥩  [Build a staking smart contract](https://github.com/scaffold-eth/scaffold-eth/tree/challenge-1-decentralized-staking)
- - 🏵  [Deploy a token and vendor](https://github.com/scaffold-eth/scaffold-eth/tree/challenge-2-token-vendor)
- - 🎫  [Extend the NFT example to make a "buyer mints" marketplace](https://github.com/scaffold-eth/scaffold-eth/tree/buyer-mints-nft)
- - 🎲  [Learn about commit/reveal](https://github.com/scaffold-eth/scaffold-eth/tree/commit-reveal-with-frontend)
- - ✍️  [Learn how ecrecover works](https://github.com/scaffold-eth/scaffold-eth/tree/signature-recover)
- - 👩‍👩‍👧‍👧  [Build a multi-sig that uses off-chain signatures](https://github.com/scaffold-eth/scaffold-eth/tree/meta-multi-sig)
- - ⏳  [Extend the multi-sig to stream ETH](https://github.com/scaffold-eth/scaffold-eth/tree/streaming-meta-multi-sig)
- - ⚖️  [Learn how a simple DEX works](https://medium.com/@austin_48503/%EF%B8%8F-minimum-viable-exchange-d84f30bd0c90)
- - 🦍  [Ape into learning!](https://github.com/scaffold-eth/scaffold-eth/tree/aave-ape)
-
-# 💌 P.S.
-
-🌍 You need an RPC key for testnets and production deployments, create an [Alchemy](https://www.alchemy.com/) account and replace the value of `ALCHEMY_KEY = xxx` in `packages/react-app/src/constants.js` with your new key.
-
-# 🏃💨 Speedrun Ethereum
-Register as a builder [here](https://speedrunethereum.com) and start on some of the challenges and build a portfolio.
-
-
-# 💬 Support Chat
-
-Join the telegram [support chat 💬](https://t.me/joinchat/KByvmRe5wkR-8F_zz6AjpA) to ask questions and find others building with 🏗 scaffold-eth!
+> A simple app that lets you sign a message with an Ethereum account & generate shareable proof-of-signature links
+> Please contact azf20 with questions
 
 ---
 
-🙏 Please check out our [Gitcoin grant](https://gitcoin.co/grants/2851/scaffold-eth) too!
+# Live app
 
-### Automated with Gitpod
+Check it out at [signator.io](https://signator.io)
 
-[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#github.com/scaffold-eth/scaffold-eth)
+# 🏃‍♀️ Quick Start
+
+required: [Node](https://nodejs.org/dist/latest-v12.x/) plus [Yarn](https://classic.yarnpkg.com/en/docs/install/) and [Git](https://git-scm.com/downloads)
+
+```bash
+git clone -b signatorio https://github.com/scaffold-eth/scaffold-eth-examples.git signatorio
+
+cd signatorio
+```
+
+```bash
+
+yarn install
+
+```
+
+```bash
+
+yarn start
+
+```
+
+📱 Open http://localhost:3000 to see the app
+
+📝 Sign new messages from the home page `/` (`Signator.jsx` in `packages/react-app/src`)
+
+## Signing a message
+
+- This is the default option
+- Signatorio uses "[personal_sign](https://github.com/ethereum/go-ethereum/pull/2940)" for safe message signing ([Metamask have a good history of Ethereum signing methods](https://docs.metamask.io/guide/signing-data.html#signing-data-with-metamask)).
+- Write the message you want to sign, with an option to pre-pend the current time (see "Advanced").
+- Hash the message if you would prefer to sign a hash (we hash the message with keccak256 -> `ethers.utils.keccak256(ethers.utils.toUtf8Bytes(_message))`)
+- Connect your account (Metamask or WalletConnect are both supported)
+- Sign the message! (We directly invoke `personal_sign` to ensure consistency across wallets)
+
+## Signing typed data
+
+- Signatorio lets users sign typed data (see "Advanced"), in line with [EIP-712: Ethereum typed structured data hashing and signing](https://eips.ethereum.org/EIPS/eip-712)
+- Typed data requires specified types, and a message ([ethers.js documentation is helpful](https://docs.ethers.io/v5/api/signer/#Signer-signTypedData))
+- If you don't specify a domain with a chainId, we will populate a domain with `chainId: 1` (otherwise Metamask signing fails)
+- The component has some simple checks for whether the entered data is a valid JSON, whether it has the required fields, and whether it is able to generate a hash for EIP-712 signing
+- Once you are ready to sign, click sign! We use `ethers.utils._signTypedData()`, and you should see nicely formatted typedData when you sign in your wallet
+- We use [`json-url`](https://www.npmjs.com/package/json-url) to compress the typedData into a string we can pass as a URL parameter as `typedData`
+
+## Creating a message to sign later
+
+- You can 'Create' without connecting your account, which will populate the message in a shareable URL to be signed later
+
+## Verifying a signature
+
+- If you have a message, a signature and address, you can 'Verify' whether the address signed the message by entering all three!
+
+📱 You can view a message at `/view`, this requires at least a message or typedData to be a url search parameter (`SignatorViewer.js` in `packages/react-app/src`)
+
+## Sharing
+
+- If the signature is successful, we pass the message, signature and signer address as URL parameters and link to the `/view` page. This makes the link & the app immediately shareable with others!
+- We offer a few sharing options: copy the URL, link to Tweet using [intent](https://developer.twitter.com/en/docs/twitter-for-websites/tweet-button/guides/web-intent), or showing a QR code
+
+## Verifying signatures
+
+- `SignatorViewer` uses React Router `useLocation` to parse the URL parameters, to identify the message or typedData, the signature and the signing addresses
+- We can verify whether the signatures match the corresponding signing addresses using `ethers.utils.verifyMessage( messageToCheck , sig )` -> if the returned address matches the signing address from the URL parameters.
+- However Signatorio also supports smart contract wallets (e.g. Argent), via the [EIP-1271](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-1271.md). We can check if an address is a contract, and if it is we can use the `isValidSignature` method to determine whether the signature was valid.
+- There is also some error handling at this step to identify bad data (i.e. addresses that aren't addresses, missing data, invalid & mismatched addresses & signatures)
+
+## Multiple Signatures
+
+- On the view page, if you connect an account you can sign the message yourself!
+- This appends another signature and signing address to the URL search parameters (we are using comma-separation to represent the arrays of signatures and addresses)
+- These are also parsed on page load, checking the signatures
+- You can delete signatures, which will remove the corresponding Address and Signature from the URL parameters
